@@ -1,0 +1,118 @@
+{
+  "engine": {
+    "name": "NebulaForge X",
+    "version": "1.0.0",
+    "target": "universal",
+    "environment": "development",
+    "debug": true,
+    "logLevel": "info",
+    "maxFPS": 60,
+    "autoSave": true
+  },
+  "runtime": {
+    "typescript": {
+      "enabled": true,
+      "strict": true,
+      "target": "ES2020"
+    },
+    "python": {
+      "enabled": false,
+      "version": "3.9+",
+      "venv": "./venv"
+    },
+    "rust": {
+      "enabled": false,
+      "edition": "2021",
+      "target": "wasm32-unknown-unknown"
+    }
+  },
+  "modules": {
+    "NebulaCore": {
+      "enabled": true,
+      "priority": 1,
+      "autoLoad": true,
+      "language": "typescript",
+      "dependencies": [],
+      "config": {
+        "logging": true,
+        "events": true,
+        "lifecycle": true
+      }
+    },
+    "VoidSage": {
+      "enabled": true,
+      "priority": 2,
+      "autoLoad": false,
+      "language": "typescript",
+      "dependencies": ["NebulaCore"],
+      "config": {
+        "aiProvider": "openai",
+        "modelManagement": true,
+        "intelligentBehaviors": true
+      }
+    },
+    "EntityForge": {
+      "enabled": true,
+      "priority": 3,
+      "autoLoad": true,
+      "language": "typescript",
+      "dependencies": ["NebulaCore"],
+      "config": {
+        "maxEntities": 10000,
+        "componentPooling": true,
+        "systemsParallel": false
+      }
+    },
+    "EchoPulse": {
+      "enabled": false,
+      "priority": 4,
+      "autoLoad": false,
+      "language": "typescript",
+      "dependencies": ["NebulaCore"],
+      "config": {
+        "spatialAudio": true,
+        "proceduralGeneration": true,
+        "audioContext": "web"
+      }
+    },
+    "SceneWeaver": {
+      "enabled": true,
+      "priority": 5,
+      "autoLoad": true,
+      "language": "typescript",
+      "dependencies": ["NebulaCore", "EntityForge"],
+      "config": {
+        "renderer": "webgl2",
+        "sceneGraph": true,
+        "culling": "frustum"
+      }
+    },
+    "PromptCrafter": {
+      "enabled": false,
+      "priority": 6,
+      "autoLoad": false,
+      "language": "typescript",
+      "dependencies": ["NebulaCore", "VoidSage"],
+      "config": {
+        "codeGeneration": true,
+        "naturalLanguageQueries": true,
+        "templateEngine": "handlebars"
+      }
+    }
+  },
+  "build": {
+    "outputDir": "./dist",
+    "sourceMap": true,
+    "minify": false,
+    "bundler": "esbuild",
+    "target": "browser",
+    "format": "esm"
+  },
+  "paths": {
+    "modules": "./engine/modules",
+    "assets": "./assets",
+    "config": "./config",
+    "temp": "./temp",
+    "logs": "./logs"
+  }
+}
