@@ -1,141 +1,366 @@
-# NebulaForge X
+# NebulaForge X Universal Engine
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+🌌 **AI-Native, Autonomous Universal Development Engine**
 
-**A Universal, Modular AI-Native Game & Software Engine**
+NebulaForge X is a groundbreaking, modular, AI-native development platform designed to build AA/AAA-level games, advanced applications, IDE tools, web platforms, and AI tools without requiring third-party APIs unless chosen. The engine features a fully autonomous architecture with built-in auto-healing, multi-language support, and advanced toolspace isolation.
 
-NebulaForge X is a cutting-edge, modular engine designed from the ground up to be AI-native, extensible, and ready for the future of interactive software development. Built with TypeScript at its core, it supports seamless integration with Python and Rust modules for specialized performance needs.
+## 🚀 Key Features
 
-## 🌟 Core Philosophy
+### Core Engine Systems
+- **🌌 NebulaKernel**: System heartbeat & runtime loop with 60Hz processing
+- **🗂️ Registry Manager**: Centralized component registry with dependency resolution
+- **🛡️ Auto-Healing System**: 3-pass error detection and automatic code repair
+- **👁️ Observer Guard**: Logic monitor with fallback mechanisms and circuit breakers
+- **📡 Communication Gateway**: Multi-protocol API gateway (HTTP, WebSocket, gRPC)
+- **🌉 Tools Entry Bridge**: External AI tools integration and management
 
-- **Modularity First**: Every component is designed as a plug-and-play module
-- **AI-Native**: Built to integrate seamlessly with AI workflows and prompt-based development
-- **Universal**: Suitable for games, simulations, creative tools, and enterprise applications
-- **Future-Ready**: Architected to evolve with new technologies and AI capabilities
+### AI Tool Integration
+- **Cursor.sh Orchestrator**: Primary framework and architecture coordinator
+- **Void Sentinel**: Error detection and code healing specialist
+- **External Tool Bridge**: Seamless integration with:
+  - Augment Code (autonomous coding)
+  - Von.dev (animation/VFX pipelines)  
+  - Kiro.dev (UI/UX framework builder)
+  - Kima.ai (content generation)
+  - Orchids.app (dialogue/narrative)
+  - Firebase Studio (cloud deployment)
+  - And more...
+
+### Advanced Capabilities
+- **Multi-Language Runtime**: TypeScript, JavaScript, Python, C++ support
+- **Workspace Isolation**: Protected tool boundaries preventing cross-contamination
+- **Real-Time Monitoring**: System health, performance metrics, and anomaly detection
+- **Auto-Recovery**: Intelligent fallback strategies and emergency protocols
+- **Modular Architecture**: Plugin-based system with hot-swapping support
 
 ## 🏗️ Architecture Overview
 
 ```
-NebulaForgeX/
-├── engine/                 # Core engine modules
-│   └── modules/           # Subsystem modules
-│       ├── NebulaCore/    # Core engine functionality
-│       ├── VoidSage/      # AI/ML integration layer
-│       ├── EntityForge/   # Entity-component system
-│       ├── EchoPulse/     # Audio processing & synthesis
-│       ├── SceneWeaver/   # Scene management & rendering
-│       └── PromptCrafter/ # AI prompt engineering tools
-├── cli/                   # Command-line interface
-├── config/               # Configuration files
-├── docs/                 # Documentation
-├── examples/             # Example projects
-└── tests/                # Test suites
+NebulaForge X Architecture
+┌─────────────────────────────────────────────────────────────────┐
+│                      Main Engine                                │
+├─────────────────────────────────────────────────────────────────┤
+│  core.kernel.ts       │  System heartbeat & runtime loop       │
+│  engine.main.ts       │  Primary entry point & lifecycle       │
+│  registry.manager.ts  │  Component registry & dependencies     │
+├─────────────────────────────────────────────────────────────────┤
+│                    Support Systems                              │
+├─────────────────────────────────────────────────────────────────┤
+│  errors.handler.ts    │  Auto-healing & bug detection          │
+│  observer.guard.ts    │  Logic monitor & fallback engine       │
+│  comm/gateway.ts      │  API gateway & communication hub       │
+│  tools/entry-bridge.ts│  External AI tools integration        │
+├─────────────────────────────────────────────────────────────────┤
+│                    Tool Ecosystem                               │
+├─────────────────────────────────────────────────────────────────┤
+│  🎯 Cursor Orchestrator │  🛡️ Void Sentinel  │  🌉 Tool Bridge │
+│  🔧 Augment Code        │  🎬 Von.dev        │  🎨 Kiro.dev    │
+│  🏭 Kima.ai            │  💬 Orchids.app    │  ☁️ Firebase    │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
-## 🚀 Quick Start
+## 📁 Project Structure
+
+```
+NebulaForgeX/
+├── 🌌 core.kernel.ts              # System kernel & runtime loop
+├── 🚀 engine.main.ts              # Main engine entry point
+├── ⚙️ engine.config.json          # Engine configuration
+├── 📋 package.json                # Dependencies & scripts
+├── 📝 tsconfig.json               # TypeScript configuration
+├── 
+├── core/
+│   └── 🗂️ registry.manager.ts     # Component registry system
+├── 
+├── systems/
+│   └── 🛡️ errors.handler.ts       # Auto-healing system
+├── 
+├── 👁️ observer.guard.ts           # System monitor & fallback
+├── 
+├── comm/
+│   └── 📡 gateway.ts              # Communication gateway
+├── 
+├── tools/
+│   └── 🌉 entry-bridge.ts         # External tools bridge
+├── 
+├── src/tools/
+│   ├── 🔄 bus.module.ts           # Inter-tool communication
+│   ├── ⚙️ base-tool.ts            # Base tool interface
+│   ├── 🔧 tool-manager.ts         # Tool lifecycle manager
+│   ├── 
+│   ├── cursor-orchestrator/       # Framework orchestrator
+│   ├── augment-code/              # Code generation
+│   ├── von-dev/                   # Animation/VFX
+│   ├── kiro-dev/                  # UI/UX builder
+│   ├── kima-ai/                   # Content generation
+│   ├── orchids-app/               # Dialogue system
+│   ├── claude-docs/               # Documentation
+│   ├── firebase-studio/           # Cloud deployment
+│   ├── databutton-ai/             # Data interfaces
+│   └── 
+│   └── inbuilt-ai-tools/
+│       ├── void-sentinel/         # Error detection
+│       ├── nebula-mind/           # AI assistant
+│       ├── echo-forge/            # Audio generation
+│       ├── morpho-x/              # Asset generation
+│       ├── animus-core/           # Behavior system
+│       └── forge-weaver/          # Compiler/packager
+├── 
+├── engine/modules/NebulaCore/     # Core engine components
+├── modules/                       # Plugin modules
+├── themes/                        # UI themes
+├── docs/schemas/                  # Architecture schemas
+├── logs/                          # System logs
+└── fixes/                         # Auto-repair patches
+```
+
+## 🔧 Installation & Setup
 
 ### Prerequisites
-- Node.js 18+ 
-- TypeScript 4.9+
-- Optional: Python 3.9+ (for Python modules)
-- Optional: Rust 1.70+ (for Rust modules)
+- Node.js (v18+ recommended)
+- TypeScript (v4.8+)
+- Git
 
-### Installation
+### Quick Start
 
 ```bash
-# Clone or create your NebulaForge X project
+# Clone the repository
+git clone <repository-url> NebulaForgeX
 cd NebulaForgeX
 
 # Install dependencies
 npm install
 
 # Initialize the engine
-npm run forge init
+npm run init
 
-# Check engine status
-npm run forge status
+# Start the engine
+npm start
 ```
 
-## 📦 Module System
-
-Each module in `engine/modules/` follows a standardized structure:
-
-- **NebulaCore**: Foundation systems (logging, events, lifecycle)
-- **VoidSage**: AI integration, model management, and intelligent behaviors
-- **EntityForge**: Entity-component-system architecture
-- **EchoPulse**: Audio engine with spatial audio and procedural generation
-- **SceneWeaver**: Scene graphs, rendering pipelines, and visual effects
-- **PromptCrafter**: Tools for AI-assisted content creation and code generation
-
-### Adding New Modules
-
-Modules can be added dynamically via the CLI:
+### CLI Commands
 
 ```bash
-npm run forge module:create MyModule --lang=typescript
-npm run forge module:enable MyModule
+# Engine control
+nf run                 # Start the engine
+nf init                # Initialize new project
+nf status              # Check engine status
+nf stop                # Stop the engine
+nf restart             # Restart the engine
+
+# Tool management
+nf tools list          # List available tools
+nf tools status        # Check tool status
+nf tools start <tool>  # Start specific tool
+nf tools stop <tool>   # Stop specific tool
+
+# Project management
+nf create <type> <name> # Create new project
+nf build               # Build current project
+nf deploy              # Deploy project
+
+# System maintenance
+nf health              # System health check
+nf repair              # Run auto-repair system
+nf cleanup             # Cleanup temp files
 ```
 
-## 🛠️ CLI Commands
+## 🛡️ Auto-Healing System
+
+NebulaForge X features an advanced auto-healing system that continuously monitors the codebase and automatically fixes issues:
+
+### 3-Pass Safety Scanning
+1. **Pass 1**: Syntax errors, dead imports, unused modules
+2. **Pass 2**: Logic contradictions, architectural issues
+3. **Pass 3**: Performance optimizations, security checks
+
+### Automatic Repairs
+- ✅ Dead import removal
+- ✅ Syntax error fixes
+- ✅ Unused code cleanup
+- ✅ Missing dependency resolution
+- ✅ Performance optimization
+- ⚠️ Complex logic fixes (admin approval required)
+
+### Monitoring & Alerts
+- Real-time error detection
+- System health monitoring
+- Performance metrics tracking
+- Automatic notifications to Void Sentinel
+- Emergency system protection
+
+## 🔗 Tool Integration
+
+### Internal Tools (Built-in)
+- **Void Sentinel**: Error detection & healing
+- **NebulaMind**: AI-powered assistant
+- **EchoForge**: Audio/music generation
+- **MorphoX**: Asset & environment generator
+- **AnimusCore**: Behavior & animation system
+- **ForgeWeaver**: Final compiler/packager
+
+### External Tools (API Integration)
+- **Augment Code**: Autonomous coding agent
+- **Von.dev**: Animation & VFX pipelines
+- **Kiro.dev**: UI/UX framework builder
+- **Kima.ai**: High-quality content generation
+- **Orchids.app**: Dialogue & narrative tools
+- **Claude**: Documentation & knowledge base
+- **Firebase Studio**: Cloud deployment
+- **Databutton.ai**: Data flow management
+
+## 🎮 Project Types
+
+NebulaForge X supports multiple project types:
+
+### Games
+- 2D/3D game engines
+- Physics simulations
+- Multiplayer systems
+- Asset pipelines
+
+### Applications
+- Desktop applications
+- Mobile apps
+- Web applications
+- Progressive Web Apps
+
+### Development Tools
+- IDEs and editors
+- Build systems
+- Testing frameworks
+- Development utilities
+
+### AI Tools
+- Machine learning pipelines
+- Natural language processing
+- Computer vision systems
+- AI-powered automation
+
+## 📊 System Monitoring
+
+### Performance Metrics
+- CPU usage monitoring
+- Memory allocation tracking
+- Network throughput analysis
+- Disk I/O monitoring
+
+### Health Indicators
+- System uptime
+- Error rates
+- Response times
+- Active connections
+
+### Circuit Breakers
+- Automatic failure detection
+- Graceful degradation
+- Service isolation
+- Recovery mechanisms
+
+## 🔒 Security Features
+
+### Workspace Isolation
+- Protected tool boundaries
+- Sandboxed execution
+- Resource access control
+- Cross-contamination prevention
+
+### Authentication & Authorization
+- Token-based authentication
+- Role-based access control
+- Session management
+- Audit logging
+
+### Security Policies
+- Code execution limits
+- Resource usage quotas
+- Network access restrictions
+- File system boundaries
+
+## 📈 Scalability
+
+### Horizontal Scaling
+- Multi-instance deployment
+- Load balancing
+- Distributed processing
+- Microservice architecture
+
+### Vertical Scaling
+- Dynamic resource allocation
+- Memory optimization
+- CPU utilization tuning
+- Performance profiling
+
+## 🧪 Testing
 
 ```bash
-# Engine management
-npm run forge init           # Initialize new project
-npm run forge build         # Build all modules
-npm run forge status        # Show engine and module status
+# Run all tests
+npm test
 
-# Module management  
-npm run forge module:list   # List available modules
-npm run forge module:enable <name>   # Enable a module
-npm run forge module:disable <name>  # Disable a module
+# Run specific test suites
+npm run test:core       # Core engine tests
+npm run test:tools      # Tool system tests
+npm run test:healing    # Auto-healing tests
+npm run test:integration # Integration tests
 
-# Development
-npm run forge dev           # Start development server
-npm run forge test          # Run test suites
+# Performance testing
+npm run test:performance
+npm run test:load
+npm run test:stress
 ```
 
-## ⚙️ Configuration
+## 📚 Documentation
 
-Engine behavior is controlled through `engine.config.json`:
-
-```json
-{
-  "engine": {
-    "version": "1.0.0",
-    "target": "web|desktop|mobile",
-    "debug": true
-  },
-  "modules": {
-    "NebulaCore": { "enabled": true, "priority": 1 },
-    "VoidSage": { "enabled": true, "priority": 2 },
-    "EntityForge": { "enabled": true, "priority": 3 }
-  }
-}
-```
-
-## 🔮 AI-Native Features
-
-- **Prompt-Driven Development**: Generate and modify code using natural language
-- **Intelligent Asset Management**: AI-powered asset optimization and generation  
-- **Adaptive Behaviors**: NPCs and systems that learn and evolve
-- **Code Generation**: Automated boilerplate and system generation
-- **Natural Language Queries**: Query your project structure and code with plain English
+- [Architecture Guide](docs/architecture.md)
+- [API Reference](docs/api-reference.md)
+- [Tool Development](docs/tool-development.md)
+- [Configuration Guide](docs/configuration.md)
+- [Troubleshooting](docs/troubleshooting.md)
 
 ## 🤝 Contributing
 
-NebulaForge X thrives on community contributions. Each module can be developed independently, making it easy for specialists to contribute to specific areas.
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### Development Setup
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests
+5. Submit a pull request
 
 ## 📄 License
 
-MIT License - see [LICENSE](LICENSE) for details.
+NebulaForge X is released under the [MIT License](LICENSE).
 
-## 🌐 Community
+## 🆘 Support
 
-- Documentation: [Coming Soon]
-- Discord: [Coming Soon] 
-- Examples: See `/examples` directory
+- 📧 Email: support@nebulaforge.dev
+- 💬 Discord: [NebulaForge Community](https://discord.gg/nebulaforge)
+- 📖 Documentation: [docs.nebulaforge.dev](https://docs.nebulaforge.dev)
+- 🐛 Issues: [GitHub Issues](https://github.com/nebulaforge/nebulaforge-x/issues)
+
+## 🎯 Roadmap
+
+### Version 1.1
+- [ ] WebAssembly support
+- [ ] Mobile deployment targets
+- [ ] Enhanced AI tool integrations
+- [ ] Real-time collaboration features
+
+### Version 1.2
+- [ ] Cloud-native architecture
+- [ ] Kubernetes deployment
+- [ ] Advanced analytics dashboard
+- [ ] Multi-tenant support
+
+### Version 2.0
+- [ ] Quantum computing integration
+- [ ] Advanced AI reasoning
+- [ ] Neural network optimization
+- [ ] Autonomous system evolution
 
 ---
 
-**Ready to forge the future? Let's build something incredible together.** ⚡
+**NebulaForge X** - *Building the future of autonomous development*
+
+🌌 *"From concept to deployment, autonomously."*
