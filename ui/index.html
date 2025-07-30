@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURORA IDE - Advanced Universal Reasoning & Operation Resourceful Assistant</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/editor.css">
+    <link rel="stylesheet" href="styles/copilot.css">
+    <link rel="stylesheet" href="styles/terminal.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+</head>
+<body>
+    <div id="aurora-root">
+        <!-- React app will be mounted here -->
+    </div>
+
+    <!-- Monaco Editor CDN -->
+    <script src="https://unpkg.com/monaco-editor@0.45.0/min/vs/loader.js"></script>
+    
+    <!-- React and ReactDOM -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Main app script -->
+    <script type="text/babel" src="jsx/App.jsx"></script>
+    <script type="text/babel" src="jsx/components/Editor.jsx"></script>
+    <script type="text/babel" src="jsx/components/Copilot.jsx"></script>
+    <script type="text/babel" src="jsx/components/Terminal.jsx"></script>
+    <script type="text/babel" src="jsx/components/Sidebar.jsx"></script>
+    <script type="text/babel" src="jsx/components/StatusBar.jsx"></script>
+    
+    <!-- Initialize the app -->
+    <script type="text/babel">
+        const { createRoot } = ReactDOM;
+        const root = createRoot(document.getElementById('aurora-root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
