@@ -1,0 +1,443 @@
+/* Terminal Styles */
+
+.aurora-terminal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--primary-bg);
+}
+
+.aurora-terminal-header {
+  background: var(--secondary-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--spacing-sm) var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  min-height: 40px;
+}
+
+.aurora-terminal-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: 600;
+  color: var(--accent-text);
+}
+
+.aurora-terminal-icon {
+  font-size: var(--font-size-large);
+}
+
+.aurora-terminal-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.aurora-terminal-output-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-md);
+  background: var(--primary-bg);
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: var(--font-size-small);
+  line-height: 1.4;
+}
+
+.aurora-terminal-output {
+  margin-bottom: var(--spacing-xs);
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.aurora-terminal-output:last-child {
+  border-bottom: none;
+}
+
+.aurora-terminal-output-system {
+  color: var(--secondary-text);
+  font-style: italic;
+}
+
+.aurora-terminal-output-command {
+  color: var(--accent-text);
+  font-weight: 600;
+}
+
+.aurora-terminal-output-output {
+  color: var(--primary-text);
+}
+
+.aurora-terminal-output-error {
+  color: var(--error-text);
+  background: rgba(244, 67, 54, 0.1);
+  padding: var(--spacing-xs);
+  border-radius: var(--border-radius-sm);
+  margin: var(--spacing-xs) 0;
+}
+
+.aurora-terminal-output-processing {
+  color: var(--warning-text);
+  font-style: italic;
+}
+
+.aurora-terminal-prompt {
+  color: var(--success-text);
+  font-weight: 600;
+  margin-right: var(--spacing-xs);
+}
+
+.aurora-terminal-content {
+  color: var(--primary-text);
+}
+
+.aurora-terminal-timestamp {
+  color: var(--secondary-text);
+  font-size: var(--font-size-small);
+  margin-left: var(--spacing-sm);
+}
+
+.aurora-terminal-input-container {
+  background: var(--secondary-bg);
+  border-top: 1px solid var(--border-color);
+  padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.aurora-terminal-input-line {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.aurora-terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--primary-text);
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: var(--font-size-small);
+  outline: none;
+  padding: var(--spacing-xs) 0;
+}
+
+.aurora-terminal-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.aurora-terminal-input::placeholder {
+  color: var(--secondary-text);
+}
+
+/* Terminal Output Styling */
+.aurora-terminal-output pre {
+  margin: var(--spacing-xs) 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.aurora-terminal-output code {
+  background: var(--tertiary-bg);
+  padding: 2px 4px;
+  border-radius: var(--border-radius-sm);
+  font-family: 'Consolas', 'Courier New', monospace;
+}
+
+/* Terminal Command History */
+.aurora-terminal-history {
+  color: var(--secondary-text);
+  font-size: var(--font-size-small);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Terminal Auto-complete */
+.aurora-terminal-autocomplete {
+  position: absolute;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.aurora-terminal-autocomplete-item {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  cursor: pointer;
+  color: var(--primary-text);
+}
+
+.aurora-terminal-autocomplete-item:hover {
+  background: var(--tertiary-bg);
+}
+
+.aurora-terminal-autocomplete-item.selected {
+  background: var(--primary-accent);
+  color: white;
+}
+
+/* Terminal Cursor Animation */
+.aurora-terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background: var(--primary-text);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Terminal Selection */
+.aurora-terminal-output::selection {
+  background: var(--primary-accent);
+  color: white;
+}
+
+.aurora-terminal-output::-moz-selection {
+  background: var(--primary-accent);
+  color: white;
+}
+
+/* Terminal Scrollbar */
+.aurora-terminal-output-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.aurora-terminal-output-container::-webkit-scrollbar-track {
+  background: var(--primary-bg);
+}
+
+.aurora-terminal-output-container::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: var(--border-radius-sm);
+}
+
+.aurora-terminal-output-container::-webkit-scrollbar-thumb:hover {
+  background: var(--border-light);
+}
+
+/* Terminal Responsive Design */
+@media (max-width: 768px) {
+  .aurora-terminal-header {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .aurora-terminal-output-container {
+    padding: var(--spacing-sm);
+    font-size: 11px;
+  }
+  
+  .aurora-terminal-input-container {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+}
+
+/* Terminal Themes */
+.aurora-terminal.theme-dark {
+  background: var(--primary-bg);
+  color: var(--primary-text);
+}
+
+.aurora-terminal.theme-light {
+  background: #ffffff;
+  color: #000000;
+}
+
+.aurora-terminal.theme-light .aurora-terminal-header {
+  background: #f5f5f5;
+  border-bottom-color: #e0e0e0;
+}
+
+.aurora-terminal.theme-light .aurora-terminal-output-container {
+  background: #ffffff;
+}
+
+.aurora-terminal.theme-light .aurora-terminal-input-container {
+  background: #f5f5f5;
+  border-top-color: #e0e0e0;
+}
+
+/* Terminal Command Types */
+.aurora-terminal-command-help {
+  color: var(--accent-text);
+}
+
+.aurora-terminal-command-error {
+  color: var(--error-text);
+}
+
+.aurora-terminal-command-success {
+  color: var(--success-text);
+}
+
+.aurora-terminal-command-warning {
+  color: var(--warning-text);
+}
+
+/* Terminal Output Types */
+.aurora-terminal-output-json {
+  color: var(--accent-text);
+}
+
+.aurora-terminal-output-xml {
+  color: var(--warning-text);
+}
+
+.aurora-terminal-output-html {
+  color: var(--success-text);
+}
+
+.aurora-terminal-output-css {
+  color: var(--primary-accent);
+}
+
+/* Terminal Status Indicators */
+.aurora-terminal-status {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-small);
+  color: var(--secondary-text);
+}
+
+.aurora-terminal-status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success-accent);
+}
+
+.aurora-terminal-status-indicator.error {
+  background: var(--error-accent);
+}
+
+.aurora-terminal-status-indicator.warning {
+  background: var(--warning-accent);
+}
+
+/* Terminal Command Suggestions */
+.aurora-terminal-suggestions {
+  margin-top: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background: var(--tertiary-bg);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.aurora-terminal-suggestion {
+  display: block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  color: var(--primary-text);
+  text-decoration: none;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-xs);
+  transition: all var(--transition-fast);
+}
+
+.aurora-terminal-suggestion:hover {
+  background: var(--accent-bg);
+  color: var(--accent-text);
+}
+
+.aurora-terminal-suggestion:last-child {
+  margin-bottom: 0;
+}
+
+/* Terminal Command History Navigation */
+.aurora-terminal-history-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-small);
+  color: var(--secondary-text);
+}
+
+.aurora-terminal-history-nav button {
+  background: none;
+  border: none;
+  color: var(--secondary-text);
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.aurora-terminal-history-nav button:hover {
+  background: var(--tertiary-bg);
+  color: var(--primary-text);
+}
+
+.aurora-terminal-history-nav button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Terminal Output Formatting */
+.aurora-terminal-output .highlight {
+  background: var(--warning-accent);
+  color: white;
+  padding: 2px 4px;
+  border-radius: var(--border-radius-sm);
+}
+
+.aurora-terminal-output .error-highlight {
+  background: var(--error-accent);
+  color: white;
+  padding: 2px 4px;
+  border-radius: var(--border-radius-sm);
+}
+
+.aurora-terminal-output .success-highlight {
+  background: var(--success-accent);
+  color: white;
+  padding: 2px 4px;
+  border-radius: var(--border-radius-sm);
+}
+
+/* Terminal Command Aliases */
+.aurora-terminal-alias {
+  color: var(--accent-text);
+  font-style: italic;
+}
+
+.aurora-terminal-alias::before {
+  content: "→ ";
+  color: var(--secondary-text);
+}
+
+/* Terminal Command Help */
+.aurora-terminal-help {
+  background: var(--tertiary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-md);
+  margin: var(--spacing-sm) 0;
+}
+
+.aurora-terminal-help h3 {
+  color: var(--accent-text);
+  margin-bottom: var(--spacing-sm);
+}
+
+.aurora-terminal-help p {
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.5;
+}
+
+.aurora-terminal-help ul {
+  margin-left: var(--spacing-lg);
+}
+
+.aurora-terminal-help li {
+  margin-bottom: var(--spacing-xs);
+}

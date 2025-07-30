@@ -1,0 +1,397 @@
+/* Editor Styles */
+
+.aurora-editor-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--primary-bg);
+}
+
+.aurora-editor-toolbar {
+  background: var(--secondary-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--spacing-sm) var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  min-height: 40px;
+}
+
+.aurora-editor-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.aurora-editor-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.aurora-editor-language {
+  background: var(--tertiary-bg);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-small);
+  color: var(--accent-text);
+  font-weight: 500;
+}
+
+.aurora-editor-badge {
+  background: linear-gradient(45deg, var(--secondary-accent), var(--primary-accent));
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-small);
+  font-weight: 500;
+}
+
+.aurora-editor {
+  flex: 1;
+  overflow: hidden;
+}
+
+.aurora-editor-status {
+  background: var(--secondary-bg);
+  border-top: 1px solid var(--border-color);
+  padding: var(--spacing-xs) var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-size: var(--font-size-small);
+  color: var(--secondary-text);
+  height: 24px;
+  min-height: 24px;
+}
+
+.aurora-editor-status span {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+/* Monaco Editor Customization */
+.monaco-editor {
+  background: var(--primary-bg) !important;
+}
+
+.monaco-editor .margin {
+  background: var(--secondary-bg) !important;
+}
+
+.monaco-editor .monaco-editor-background {
+  background: var(--primary-bg) !important;
+}
+
+.monaco-editor .line-numbers {
+  color: var(--secondary-text) !important;
+}
+
+.monaco-editor .current-line {
+  background: var(--tertiary-bg) !important;
+}
+
+.monaco-editor .selection {
+  background: var(--primary-accent) !important;
+}
+
+.monaco-editor .findMatch {
+  background: var(--warning-accent) !important;
+}
+
+.monaco-editor .currentFindMatch {
+  background: var(--error-accent) !important;
+}
+
+/* Editor Minimap */
+.monaco-editor .minimap {
+  background: var(--secondary-bg) !important;
+}
+
+.monaco-editor .minimap .minimap-slider {
+  background: var(--border-color) !important;
+}
+
+.monaco-editor .minimap .minimap-slider:hover {
+  background: var(--border-light) !important;
+}
+
+/* Editor Scrollbars */
+.monaco-editor .scrollbar .slider {
+  background: var(--border-color) !important;
+}
+
+.monaco-editor .scrollbar .slider:hover {
+  background: var(--border-light) !important;
+}
+
+/* Editor Suggestions */
+.monaco-editor .suggest-widget {
+  background: var(--secondary-bg) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row {
+  color: var(--primary-text) !important;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row:hover {
+  background: var(--tertiary-bg) !important;
+}
+
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row.selected {
+  background: var(--primary-accent) !important;
+}
+
+/* Editor Hover */
+.monaco-editor .hover-contents {
+  background: var(--secondary-bg) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--primary-text) !important;
+}
+
+/* Editor Context Menu */
+.monaco-editor .context-menu {
+  background: var(--secondary-bg) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.monaco-editor .context-menu .monaco-menu .monaco-action-bar .action-item {
+  color: var(--primary-text) !important;
+}
+
+.monaco-editor .context-menu .monaco-menu .monaco-action-bar .action-item:hover {
+  background: var(--tertiary-bg) !important;
+}
+
+/* Editor Parameter Hints */
+.monaco-editor .parameter-hints-widget {
+  background: var(--secondary-bg) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--primary-text) !important;
+}
+
+/* Editor Lightbulb */
+.monaco-editor .lightbulb-glyph {
+  background: var(--primary-accent) !important;
+}
+
+/* Editor Error Squiggles */
+.monaco-editor .squiggly-error {
+  border-bottom: 2px solid var(--error-accent) !important;
+}
+
+.monaco-editor .squiggly-warning {
+  border-bottom: 2px solid var(--warning-accent) !important;
+}
+
+.monaco-editor .squiggly-info {
+  border-bottom: 2px solid var(--primary-accent) !important;
+}
+
+/* Editor Line Numbers */
+.monaco-editor .line-numbers.active-line-number {
+  color: var(--accent-text) !important;
+}
+
+/* Editor Cursor */
+.monaco-editor .cursor {
+  background: var(--primary-text) !important;
+}
+
+/* Editor Selection */
+.monaco-editor .selection {
+  background: rgba(33, 150, 243, 0.3) !important;
+}
+
+/* Editor Find Widget */
+.monaco-editor .find-widget {
+  background: var(--secondary-bg) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.monaco-editor .find-widget input {
+  background: var(--tertiary-bg) !important;
+  color: var(--primary-text) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.monaco-editor .find-widget button {
+  background: var(--tertiary-bg) !important;
+  color: var(--primary-text) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.monaco-editor .find-widget button:hover {
+  background: var(--accent-bg) !important;
+}
+
+/* Editor Replace Widget */
+.monaco-editor .replace-widget {
+  background: var(--secondary-bg) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+/* Editor Overview Ruler */
+.monaco-editor .overview-ruler {
+  background: var(--secondary-bg) !important;
+}
+
+/* Editor Glyph Margin */
+.monaco-editor .glyph-margin {
+  background: var(--secondary-bg) !important;
+}
+
+/* Editor Decorations */
+.monaco-editor .decorationsOverviewRuler {
+  background: var(--secondary-bg) !important;
+}
+
+/* Editor Inlay Hints */
+.monaco-editor .inlay-hint {
+  color: var(--secondary-text) !important;
+}
+
+/* Editor Code Lens */
+.monaco-editor .codelens-decoration {
+  color: var(--secondary-text) !important;
+}
+
+/* Editor Folding */
+.monaco-editor .folding {
+  color: var(--secondary-text) !important;
+}
+
+/* Editor Indent Guides */
+.monaco-editor .indent-guide {
+  color: var(--border-color) !important;
+}
+
+/* Editor Bracket Matching */
+.monaco-editor .bracket-match {
+  background: var(--primary-accent) !important;
+}
+
+/* Editor Word Highlight */
+.monaco-editor .wordHighlight {
+  background: var(--tertiary-bg) !important;
+}
+
+.monaco-editor .wordHighlightStrong {
+  background: var(--primary-accent) !important;
+}
+
+/* Editor Symbol Highlight */
+.monaco-editor .symbolHighlight {
+  background: var(--tertiary-bg) !important;
+}
+
+/* Editor Link */
+.monaco-editor .detected-link {
+  color: var(--primary-accent) !important;
+}
+
+/* Editor Whitespace */
+.monaco-editor .whitespace {
+  color: var(--border-color) !important;
+}
+
+/* Editor Indent */
+.monaco-editor .indent {
+  color: var(--border-color) !important;
+}
+
+/* Editor Guide */
+.monaco-editor .guide {
+  color: var(--border-color) !important;
+}
+
+/* Editor Ruler */
+.monaco-editor .ruler {
+  color: var(--border-color) !important;
+}
+
+/* Editor Overview */
+.monaco-editor .overview {
+  background: var(--secondary-bg) !important;
+}
+
+/* Editor Scrollbar */
+.monaco-editor .scrollbar .slider {
+  background: var(--border-color) !important;
+}
+
+.monaco-editor .scrollbar .slider:hover {
+  background: var(--border-light) !important;
+}
+
+.monaco-editor .scrollbar .slider.active {
+  background: var(--primary-accent) !important;
+}
+
+/* Editor Scrollbar Arrow */
+.monaco-editor .scrollbar .arrow {
+  background: var(--secondary-bg) !important;
+  color: var(--secondary-text) !important;
+}
+
+.monaco-editor .scrollbar .arrow:hover {
+  background: var(--tertiary-bg) !important;
+  color: var(--primary-text) !important;
+}
+
+/* Editor Scrollbar Shadow */
+.monaco-editor .scrollbar .shadow {
+  background: var(--shadow-color) !important;
+}
+
+/* Editor Scrollbar Border */
+.monaco-editor .scrollbar .border {
+  background: var(--border-color) !important;
+}
+
+/* Editor Scrollbar Corner */
+.monaco-editor .scrollbar .corner {
+  background: var(--secondary-bg) !important;
+}
+
+/* Editor Scrollbar Slider */
+.monaco-editor .scrollbar .slider {
+  background: var(--border-color) !important;
+}
+
+.monaco-editor .scrollbar .slider:hover {
+  background: var(--border-light) !important;
+}
+
+.monaco-editor .scrollbar .slider.active {
+  background: var(--primary-accent) !important;
+}
+
+/* Editor Scrollbar Arrow */
+.monaco-editor .scrollbar .arrow {
+  background: var(--secondary-bg) !important;
+  color: var(--secondary-text) !important;
+}
+
+.monaco-editor .scrollbar .arrow:hover {
+  background: var(--tertiary-bg) !important;
+  color: var(--primary-text) !important;
+}
+
+/* Editor Scrollbar Shadow */
+.monaco-editor .scrollbar .shadow {
+  background: var(--shadow-color) !important;
+}
+
+/* Editor Scrollbar Border */
+.monaco-editor .scrollbar .border {
+  background: var(--border-color) !important;
+}
+
+/* Editor Scrollbar Corner */
+.monaco-editor .scrollbar .corner {
+  background: var(--secondary-bg) !important;
+}

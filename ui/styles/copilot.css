@@ -1,0 +1,371 @@
+/* Copilot Styles */
+
+.aurora-copilot {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--primary-bg);
+  border-left: 1px solid var(--border-color);
+}
+
+.aurora-copilot-header {
+  background: var(--secondary-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--spacing-sm) var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  min-height: 50px;
+}
+
+.aurora-copilot-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: 600;
+  color: var(--accent-text);
+}
+
+.aurora-copilot-icon {
+  font-size: var(--font-size-large);
+}
+
+.aurora-copilot-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.aurora-copilot-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.aurora-copilot-message {
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  animation: fadeIn var(--transition-normal);
+}
+
+.aurora-copilot-message-user {
+  border-left: 4px solid var(--primary-accent);
+  margin-left: var(--spacing-lg);
+}
+
+.aurora-copilot-message-assistant {
+  border-left: 4px solid var(--secondary-accent);
+  margin-right: var(--spacing-lg);
+}
+
+.aurora-copilot-message-error {
+  border-left: 4px solid var(--error-accent);
+  background: rgba(244, 67, 54, 0.1);
+}
+
+.aurora-copilot-message-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-small);
+}
+
+.aurora-copilot-message-type {
+  font-weight: 600;
+  color: var(--accent-text);
+}
+
+.aurora-copilot-message-time {
+  color: var(--secondary-text);
+  font-size: var(--font-size-small);
+}
+
+.aurora-copilot-message-content {
+  color: var(--primary-text);
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.aurora-copilot-suggestions {
+  margin-top: var(--spacing-md);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.aurora-copilot-suggestion {
+  background: var(--tertiary-bg);
+  border: 1px solid var(--border-color);
+  color: var(--primary-text);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: var(--font-size-small);
+}
+
+.aurora-copilot-suggestion:hover {
+  background: var(--accent-bg);
+  border-color: var(--primary-accent);
+}
+
+.aurora-copilot-welcome {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--secondary-text);
+}
+
+.aurora-copilot-welcome-icon {
+  font-size: 48px;
+  margin-bottom: var(--spacing-md);
+}
+
+.aurora-copilot-welcome h3 {
+  color: var(--accent-text);
+  margin-bottom: var(--spacing-md);
+}
+
+.aurora-copilot-welcome p {
+  margin-bottom: var(--spacing-md);
+  line-height: 1.6;
+}
+
+.aurora-copilot-welcome ul {
+  text-align: left;
+  margin-left: var(--spacing-lg);
+}
+
+.aurora-copilot-welcome li {
+  margin-bottom: var(--spacing-xs);
+  color: var(--primary-text);
+}
+
+.aurora-copilot-quick-suggestions {
+  padding: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.aurora-copilot-quick-suggestions h4 {
+  color: var(--accent-text);
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-small);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.aurora-copilot-suggestions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-sm);
+}
+
+.aurora-copilot-quick-suggestion {
+  background: var(--tertiary-bg);
+  border: 1px solid var(--border-color);
+  color: var(--primary-text);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+  font-size: var(--font-size-small);
+}
+
+.aurora-copilot-quick-suggestion:hover {
+  background: var(--accent-bg);
+  border-color: var(--primary-accent);
+  transform: translateY(-1px);
+}
+
+.aurora-copilot-input {
+  border-top: 1px solid var(--border-color);
+  padding: var(--spacing-md);
+  background: var(--secondary-bg);
+}
+
+.aurora-copilot-input-container {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.aurora-copilot-input-container textarea {
+  flex: 1;
+  background: var(--tertiary-bg);
+  border: 1px solid var(--border-color);
+  color: var(--primary-text);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  resize: none;
+  font-family: var(--font-family);
+  font-size: var(--font-size-normal);
+  line-height: 1.4;
+}
+
+.aurora-copilot-input-container textarea:focus {
+  outline: none;
+  border-color: var(--primary-accent);
+}
+
+.aurora-copilot-input-container textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.aurora-copilot-input-hint {
+  font-size: var(--font-size-small);
+  color: var(--secondary-text);
+  text-align: center;
+}
+
+/* Copilot Message Animations */
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.aurora-copilot-message {
+  animation: messageSlideIn var(--transition-normal);
+}
+
+/* Copilot Typing Indicator */
+.aurora-copilot-typing {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--secondary-text);
+  font-style: italic;
+}
+
+.aurora-copilot-typing-dots {
+  display: flex;
+  gap: 2px;
+}
+
+.aurora-copilot-typing-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--secondary-text);
+  border-radius: 50%;
+  animation: typingDot 1.4s infinite ease-in-out;
+}
+
+.aurora-copilot-typing-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.aurora-copilot-typing-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes typingDot {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Copilot Code Blocks */
+.aurora-copilot-message-content pre {
+  background: var(--primary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-md);
+  margin: var(--spacing-sm) 0;
+  overflow-x: auto;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: var(--font-size-small);
+}
+
+.aurora-copilot-message-content code {
+  background: var(--tertiary-bg);
+  padding: 2px 4px;
+  border-radius: var(--border-radius-sm);
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: var(--font-size-small);
+}
+
+/* Copilot Links */
+.aurora-copilot-message-content a {
+  color: var(--primary-accent);
+  text-decoration: none;
+}
+
+.aurora-copilot-message-content a:hover {
+  text-decoration: underline;
+}
+
+/* Copilot Lists */
+.aurora-copilot-message-content ul,
+.aurora-copilot-message-content ol {
+  margin: var(--spacing-sm) 0;
+  padding-left: var(--spacing-lg);
+}
+
+.aurora-copilot-message-content li {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Copilot Blockquotes */
+.aurora-copilot-message-content blockquote {
+  border-left: 4px solid var(--primary-accent);
+  padding-left: var(--spacing-md);
+  margin: var(--spacing-sm) 0;
+  color: var(--secondary-text);
+  font-style: italic;
+}
+
+/* Copilot Tables */
+.aurora-copilot-message-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: var(--spacing-sm) 0;
+}
+
+.aurora-copilot-message-content th,
+.aurora-copilot-message-content td {
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  text-align: left;
+}
+
+.aurora-copilot-message-content th {
+  background: var(--secondary-bg);
+  font-weight: 600;
+}
+
+/* Copilot Responsive Design */
+@media (max-width: 768px) {
+  .aurora-copilot {
+    width: 100% !important;
+  }
+  
+  .aurora-copilot-suggestions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .aurora-copilot-input-container {
+    flex-direction: column;
+  }
+  
+  .aurora-copilot-input-container button {
+    align-self: flex-end;
+  }
+}
